@@ -1,0 +1,61 @@
+# Function to check if the system is powered on
+def check_power():
+    power = input("Is the system powering on? (yes/no): ").lower()
+    if power == 'yes':
+        return True
+    else:
+        print("Troubleshooting Suggestion: Please check the power connection or battery.")
+        return False
+
+# Function to check the booting process
+def check_boot_process():
+    boot = input("Is the system booting (e.g., showing BIOS/UEFI screen)? (yes/no): ").lower()
+    if boot == 'yes':
+        return True
+    else:
+        print("Troubleshooting Suggestion: Check boot settings or try booting into safe mode.")
+        return False
+
+# Function to check if RAM is intact
+def check_ram():
+    ram = input("Is there a RAM problem (e.g., beeping sound or error messages)? (yes/no): ").lower()
+    if ram == 'no':
+        return True
+    else:
+        print("Troubleshooting Suggestion: Check the RAM sticks, reinsert or replace them.")
+        return False
+
+# Function to check network connectivity
+def check_connectivity():
+    connectivity = input("Is the system connected to the network/internet? (yes/no): ").lower()
+    if connectivity == 'yes':
+        return True
+    else:
+        print("Troubleshooting Suggestion: Check the network cable or Wi-Fi connection.")
+        return False
+
+# Main troubleshooting function
+def troubleshoot_computer():
+    print("Starting computer troubleshooting process...\n")
+    
+    # Step 1: Check if the system is powering on
+    if not check_power():
+        return  # Stop if the system isn't powering on
+    
+    # Step 2: Check the boot process
+    if not check_boot_process():
+        return  # Stop if the booting process isn't working
+    
+    # Step 3: Check the RAM
+    if not check_ram():
+        return  # Stop if there's a RAM issue
+    
+    # Step 4: Check network connectivity
+    if not check_connectivity():
+        return  # Stop if there's a connectivity issue
+    
+    # All checks passed
+    print("\nThe system seems to be working fine. If issues persist, seek further technical support.")
+
+# Run the troubleshooting program
+troubleshoot_computer()
